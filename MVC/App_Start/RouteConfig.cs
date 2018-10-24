@@ -12,6 +12,11 @@ namespace MVC
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+            "LevelsByCreateDate",
+            "levels/created/{year}/{month}",
+            new { controller = "Levels", action = "ByCreateDate" }
+            /*new { year = @"\d{4}", month = @"\d{2}" }  */ );
 
             routes.MapRoute(
                 name: "Default",

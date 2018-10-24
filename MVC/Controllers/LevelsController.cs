@@ -7,21 +7,21 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
-    public class MoviesController : Controller
+    public class LevelsController : Controller
     {
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() {Name = "Shrek"};
+            var movie = new Level() { Name = "Shrek" };
 
-            return RedirectToAction("Index", "Home", new {page = 1, sortBy = "name"});
+            return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
         }
 
-        public ActionResult Edit(int id)
+
+        public ActionResult LevelsByCreateDate(int year, int month)
         {
-            return Content("id" + id);
+            return Content(" / " + month + " / " + year);
         }
-
 
         //When you navigate to "Movies"
         public ActionResult Index(int? pageIndex, string sortBy)
